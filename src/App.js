@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import NavBar from './components/NavBar';
+import ItemDetailContainer from './components/ItemDetailContainer.js'
+ import "bootstrap/dist/css/bootstrap.min.css";
+import ItemListContainer from './components/ItemListContainer';
+import {BrowserRouter,Switch,Route} from 'react-router-dom';
+import Cart from './components/Cart';
+const mensaje = "Bienvenido al paraiso de las frutas secas, nosotros secamos con amor";
+
+
+
+    function App() {
   return (
-    <div className="App">
+
+
+      <BrowserRouter>
+             <NavBar/>
+    <Switch>
+        <Route exact path="/">
+            <ItemListContainer name="Escoger Producto a Comprar"/>
+                </Route>
+                    <Route path="/categories/:categoryid">
+                        <ItemListContainer/>
+                        </Route>
+                    <Route path="/categories">
+                        <ItemListContainer/>
+                        </Route>
+                    <Route path="/item/:itemid">
+                        <ItemDetailContainer/>
+      </Route>
+                    <Route path="/cart">
+                        <Cart/>
+                        </Route>
+                        </Switch>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
-    </div>
-  );
+          </BrowserRouter>
+          );
 }
+
+
 
 export default App;

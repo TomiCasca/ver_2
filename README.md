@@ -1,10 +1,10 @@
-Entrega Final
+*Entrega Final*
 
-Introducción
+*Introducción*
 
 Proyecto basado en la tecnología ReactJs para desarrollar un ecommerce de Frutos Secos. Los datos se almacenan en Firestore donde podremos ver la información del usuario que se le solicita para generar el código de orden. El usuario es capaz de agregar la cantidad de items que desee según disponibilidad y podrá verlos en el carrito donde finalizará su compra.
 
-Requerimientos
+*Requerimientos*
 
 Bootstrap: npm install bootstrap react-bootstrap
 
@@ -14,7 +14,7 @@ Router-dom: npm install react-router-dom
 
 Una vez instalados los paquetes señalados anteriormente el proyecto debería poder ejecutarse.
 
-Estructura de Datos
+*Estructura de Datos*
 
 La App guarda datos de tipo item que describen los mismopara la venta y orders que son las que realizan los clientes. Por ejemplo:
     {
@@ -47,5 +47,5 @@ name: "Berenjena seca"
 price: 5000
 total: 20000
 
-La Demo la podrá visualizar aquí:
+*La Demo la podrá visualizar aquí:*
 https://friendly-bohr-957027.netlify.app/

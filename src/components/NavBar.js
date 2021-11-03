@@ -1,8 +1,7 @@
 import {Link} from 'react-router-dom';
 import image from './1.png'
-import cart from './cart.gif'
-import { Navbar, NavItem,NavTabs,NavDropdown,MenuItem,Nav,Form,FormControl,Button,Dropdown,DropdownButton} from 'react-bootstrap';
-import React,{createContext,useState,useContext} from 'react';
+import { Navbar, NavDropdown,Nav} from 'react-bootstrap';
+import React,{} from 'react';
 import {Carrito} from './CartWidget';
 
 

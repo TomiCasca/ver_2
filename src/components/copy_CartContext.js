@@ -1,7 +1,5 @@
 
-import React,{createContext,useState,useContext} from 'react';
-import CartWidget from './CartWidget';
-import NavBar from './NavBar';
+import React,{useState} from 'react';
 export const  CartContext=React.createContext();
 
 
@@ -127,7 +125,6 @@ let i=0;
 sum=cart[i].count+sum;
 i++;
         }
-console.log("llamando carrito desde SumItems");
         setTotal(sum);
         return sum;
 
@@ -140,32 +137,6 @@ return false;
     }
 
 }
-
-
-
-const sumPriceTotal=({})=>{
-
-let i=0;
-let sum=0;
-    if(cart.length){
-
-
-        while(i<cart.length)
-        {
-sum=cart[i].itemprice*cart[i].count+sum;
-i++;
-        }
-return sum;
-
-
-}
-
-else return false;
-}
-
-
-
-
 
     return (<CartContext.Provider value={{cart,additem,removeItem,clear,isInCart,isInCartIndex,SumItems,total}}> {children}
     </CartContext.Provider>)

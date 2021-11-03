@@ -1,7 +1,6 @@
-import React, {useState,useEffect,useContext,useParams} from 'react';
-import {Card,Button} from 'react-bootstrap';
+import React, {} from 'react';
+import {Card} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
-import Cart from './Cart';
 import ItemCount from './ItemCount';
 export const ItemDetail =({jsonpack})=>{
 

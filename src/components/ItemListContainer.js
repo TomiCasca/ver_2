@@ -1,6 +1,4 @@
-import ItemCount from './CountContainer';
 import ItemList from './ItemList';
-import Item from './Item';
 import { useParams } from "react-router-dom";
 import React, {useState,useEffect} from 'react';
 import {getFirestore} from '../firebase';
@@ -21,9 +19,8 @@ if(categoryid)
 console.log("No results!");
             }
             setItem(querySnapshot.docs.map(doc=>doc.data()));
-        }).catch((error)=>{
-            console.log("Error searching items",error);
-        }).finally(()=>{
+        }).catch((_error) => {
+            }).finally(()=>{
         });
 
 

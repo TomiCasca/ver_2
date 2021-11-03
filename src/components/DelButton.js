@@ -1,17 +1,15 @@
 
-import { Badge,Table,Button} from 'react-bootstrap';
-import React, {useState,useEffect,useContext,createContext} from 'react';
+import { Button} from 'react-bootstrap';
+import React, {useContext} from 'react';
 import {CartContext} from './CartContext';
-import { Link } from "react-router-dom";
-export const DelButton = ({itemid}) => {
-const {removeitem}=useContext(CartContext);
-console.log("Estoy en DelButton con itemid:"+itemid);
+export function DelButton({ itemid }) {
+    const { removeitem } = useContext(CartContext);
 
-return(
-    <Button   variant='outline-secondary' onClick={()=>removeitem({itemid})}>Eliminar Item</Button>
-)
+    return (
+        <Button variant='outline-secondary' onClick={() => removeitem({ itemid })}>Eliminar Item</Button>
+    );
 
-};
+}
 
 
 

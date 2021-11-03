@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+Entrega Final
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Introducción
 
-## Available Scripts
+Proyecto basado en la tecnología ReactJs para desarrollar un ecommerce de Frutos Secos. Los datos se almacenan en Firestore donde podremos ver la información del usuario que se le solicita para generar el código de orden. El usuario es capaz de agregar la cantidad de items que desee según disponibilidad y podrá verlos en el carrito donde finalizará su compra.
 
-In the project directory, you can run:
+Requerimientos
 
-### `npm start`
+Bootstrap: npm install bootstrap react-bootstrap
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Firebase: npm install firebase@8.9.1
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Router-dom: npm install react-router-dom
 
-### `npm test`
+Una vez instalados los paquetes señalados anteriormente el proyecto debería poder ejecutarse.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Estructura de Datos
 
-### `npm run build`
+La App guarda datos de tipo item que describen los mismopara la venta y orders que son las que realizan los clientes. Por ejemplo:
+    {
+        "id":2,
+        "title":"Berenjena seca",
+        "description":"Esta verdura seca es una bomba de vitaminas, perfectas para acompañar arroz, salsa, sopa y casuela. La berenjena es un super alimento super nutritivo y de verdad hace un cambio en la vida de las personas que la incorporan en su dieta haz ese cambio ahora. Duración estimada 3 años",
+        "price":5000,
+        "categoryid":1,
+        "stock":3,
+        "pictureurl":"https://thefreerangelife.com/wp-content/uploads/2013/09/IMG_0453.jpg"
+    }
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+La App guarda la orden del cliente y crea lo siguiente en Firestore:
+buyer
+apellido: "a"
+email: "a"
+name: "a"
+phone: "54..."
+date: 30 de octubre de 2021, 12:20:28 UTC-3
+items
+0
+cantidad: 3
+id: "3"
+name: "Manzana Seca"
+price: 5000
+1
+cantidad: 1
+id: "2"
+name: "Berenjena seca"
+price: 5000
+total: 20000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+La Demo la podrá visualizar aquí:

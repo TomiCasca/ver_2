@@ -1,14 +1,13 @@
 import {getFirestore} from '../firebase';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import { Badge,Table,Button,InputGroup,FormControl} from 'react-bootstrap';
-import React, {useState,useEffect,useContext,createContext} from 'react';
+import { Badge,Table,Button} from 'react-bootstrap';
+import React, {useState,useEffect,useContext} from 'react';
 import {CartContext} from './CartContext';
 import { Link } from 'react-router-dom';
 import DelButton from './DelButton';
 import firebase from 'firebase/app';
 import '@firebase/firestore';
 const Cart = () => {
-    const {carts,cartlength,clear,total,removeitem}=useContext(CartContext);
+    const {carts,cartlength,total}=useContext(CartContext);
     const [order,setOrder]=useState();
     const [orderid,setOrderid]=useState();
     const [error,setError]=useState();
@@ -18,7 +17,6 @@ const Cart = () => {
     const [name,setName]=useState("");
     const [apellido,setApellido]=useState("");
 
-var dudeid;
  function onApellidoChange(evt) {
     setApellido(evt.target.value);
   }
@@ -47,7 +45,7 @@ let i=0;
     useEffect(()=>{
 setOrder(
     {
-        buyer:{name,apellido,phone,email},
+        buyer:{name:name,apellido:apellido,phone:phone,email:email},
         items:goodarray,
         date:firebase.firestore.Timestamp.fromDate(new Date()),
 total:total()
@@ -97,20 +95,17 @@ i++;
 
 
 
-    const  InsertOrder =({goodarray})=>{
+    const  InsertOrder =()=>{
 
 
 let orderid;
 
-
-        console.log('Inside InsertOrder function'+order);
         const db=getFirestore()
             const orderDb=db.collection('orders')
         orderDb.add(order).then(({id})=>
             {
 orderid=id;
 
-                // dudeid=id//SUCESS
             }).catch(err=>{
                     setError(err);
                 }).finally(()=>{

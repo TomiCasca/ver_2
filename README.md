@@ -48,3 +48,4 @@ price: 5000
 total: 20000
 
 La Demo la podrá visualizar aquí:
+https://friendly-bohr-957027.netlify.app/
